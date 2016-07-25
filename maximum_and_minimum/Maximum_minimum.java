@@ -30,9 +30,21 @@ public class MaxMin {
         int minimum = MaxMin.getMin(arrayInput);
         int maximum = MaxMin.getMax(arrayInput);
         
+        int[] minArray = new int[1];
+        int[] maxArray = new int[1];
+        
         for(int i = 0; i < arrayInput.length - 1; i++){
+            if (arrayInput[i] <= minimum) {
+                minArray[0] = arrayInput[i];
+            }
             
+            if (arrayInput[i] <= maximum) {
+                maxArray[0] = arrayInput[i];
+            }
         }
+        
+        System.out.println("The Minimum Array is " + Arrays.toString(minArray));
+        System.out.println("The Maximum Array is " + Arrays.toString(maxArray));
     }
     
     public static int getMax(int[] arrayInput) {
