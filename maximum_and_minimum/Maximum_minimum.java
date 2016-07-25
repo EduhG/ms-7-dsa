@@ -10,6 +10,7 @@
 // put the highest in its array
 // output the highest then output the lowest
 
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -27,33 +28,32 @@ public class MaxMin {
     public static void main(String[] args) {
         int[] arrayInput = {45, 9, 102, 34, 83};
         
-        int minimum = MaxMin.getMin(arrayInput);
-        int maximum = MaxMin.getMax(arrayInput);
-        
-        int[] minArray = new int[1];
-        int[] maxArray = new int[1];
-        
-        for(int i = 0; i < arrayInput.length - 1; i++){
-            if (arrayInput[i] <= minimum) {
-                minArray[0] = arrayInput[i];
-            }
-            
-            if (arrayInput[i] <= maximum) {
-                maxArray[0] = arrayInput[i];
-            }
-        }
-        
-        System.out.println("The Minimum Array is " + Arrays.toString(minArray));
-        System.out.println("The Maximum Array is " + Arrays.toString(maxArray));
+        System.out.println("The Minimum Array is " + MaxMin.getMin(arrayInput));
+        System.out.println("The Maximum Array is " + MaxMin.getMax(arrayInput));
     }
     
     public static int getMax(int[] arrayInput) {
-        Arrays.sort(arrayInput);
-        return arrayInput[arrayInput.length - 1];
+        int maxVal = arrayInput[0];
+        
+        for(int i = 0; i < arrayInput.length; i++){
+            if (arrayInput[i] >= maxVal) {
+                maxVal = arrayInput[i];
+            }
+        }
+        
+        return maxVal;
     }
     
     public static int getMin(int[] arrayInput) {
-        Arrays.sort(arrayInput);
-        return arrayInput[0];
+        int minVal = arrayInput[0];
+        
+        for(int i = 0; i < arrayInput.length; i++){
+            if (arrayInput[i] <= minVal) {
+                minVal = arrayInput[i];
+            }
+        }
+        
+        return minVal;
     }
+    
 }
